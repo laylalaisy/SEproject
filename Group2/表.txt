@@ -1,0 +1,44 @@
+培养方案：
+stu_id		int
+major_id	int
+gg     		int
+xx			int
+
+专业学分要求:
+major_id 	int
+min_gg		int
+min_xx		int
+
+课程搜索
+course_id		int
+course_name		char
+teacher_name	char
+course_type		char(int)
+course_time		time
+course_place	char
+season			char
+
+选课
+stu_id *		int
+course_id*		int
+//teacher_name* 	char
+select_time		time
+//course_time*		time
+//course_place	char
+season			char
+priority		int
+state			bool
+
+for 1:
+用户信息
+
+for 2:
+课程信息
+相同课程代码的课，如果有多门，要有多个id
+课程要分类
+
+
+界面：
+管理员：控制选课时间，选课表的修改权限，性能控制
+学生：培养方案制定 课程搜索 课程信息查看 选课 查看课表
+老师：导出学生
