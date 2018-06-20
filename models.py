@@ -203,13 +203,12 @@ class teach(models.Model):
     '''
     teach(teacher_id int, course_id int) //讲授课程 ref teacher, course
     '''
+    teach_id=models.IntegerField(primary_key=True)
+    duplicate=models.IntegerField()
     teacher_id=models.ForeignKey(teacher,on_delete=models.CASCADE,related_name="teacher_id_1")
     course_id=models.ForeignKey(course,on_delete=models.CASCADE,related_name="college_id_1")
     capacity=models.IntegerField(null=False)
     exam_date=models.DateField(null=True)
-    class Meta:
-        unique_together = ("teacher_id","course_id")
-    primary = ("teacher_id","course_id")
 
 class takeup(models.Model):
     '''
@@ -302,3 +301,4 @@ class log(models.Model):
     operation_id=models.ForeignKey(operation,on_delete=models.CASCADE)
     time=models.DateTimeField(auto_now_add=True,null=False)
     content=models.TextField()
+
